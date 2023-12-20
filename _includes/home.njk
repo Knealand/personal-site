@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+    <title>
+        {% if title %}
+            {{title}}
+        {%endif%}
+    </title>
+</head>
+    <body>
+        {% include "partials/header.njk" %}
+<script>
+   const term = $('body').terminal({
+            ping: function() {
+                this.echo('pong', { typing: true });
+            },
+            ls: function(){
+                this.echo("\nclick away\n");
+                {%- for post in collections.post|reverse -%}
+                this.echo('<a class="ls-link" target="_blank" href="{{post.url}}"><span class="tag">{{post.data.tag}}</span>{{post.data.title}}</a>',{raw: true});
+                {%- endfor -%}
+                this.echo("\n");
+            },
+            poem: function(){
+                $.ajax({
+                    url:"https://poetrydb.org/random",
+                    type: "GET",
+                    success: function(result){
+                        let poem = result[0];
+                        term.echo("\n"+poem.lines.join('\n'), {typing: true})
+                    },
+                    error: function(result){
+                        term.error("No poem for you, sadly :(\n Try again...");
+                    }
+                })
+            },
+            echo: function(word){
+                this.echo(word, {typing: true})
+            },
+            whoami: function(){
+                this.echo("NAME=Knealand Yates");
+                this.echo("GITHUB=<a class='ls-link' href=https://github.com/Knealand>https://github.com/Knealand</a>",{raw: true});
+                this.echo("LINKEDIN=<a class='ls-link' href=https://www.linkedin.com/in/knealand-yates/>https://linkedin.com/in/knealand-yates/</a>",{raw: true});
+                this.echo("\nHi, I'm Knealand Yates. I'm a Computer Science nerd who enjoys a broad range of topics, including: Cybersecurity, Machine Learning, Web Development, Coding Challenges,\nAlgorithms, Data Structures, Functional Programming, Linux  and Easter Eggs ( ͡° ͜ʖ ͡°).");
+                this.echo("");
+            },
+            help: function(){
+                this.echo(  "ls... overview of projects, past and present\n"+
+                            "whoami............................ Who am i?\n"+
+                            "ping................................... Pong\n"+
+                            "help................................. How to\n"+
+                            "clear........................... Fresh Start\n"+
+                            "echo............................. Echo..echo\n"
+                
+                );
+            }
+        }, {
+            greetings:  "Starting env:......................................... ok\n"+
+                        "Loading deamons:...................................... ok\n"+
+                        "Configure options..................................... ok\n"+
+                        "New client OS - " + window.navigator.oscpu.split(' ')[0] + "............................... ok\n"+
+                        "Connecting to 10.2.2.2:ssh............................ ok\n"+
+                        "System open: Access level............................. 09\n"+
+                        "\n\n"+
+                        "Welcome to Knealand Yates' personal website!\n\n"+
+                        "Common Commands\n"+
+                        "\twhoami  ls    help\n"+
+                        "\techo    poem  ping\n",
+            prompt: function(p){
+            var path = '~'
+            p("[[b;;]root]@knealandyates.com" + ":" + path + "$ ")} 
+        });
+</script>
+    </body>
+</html>

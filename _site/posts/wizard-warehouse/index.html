@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link href="../../css/main.css" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+    <title>
+        
+            Wizard Warehouse
+        
+    </title>
+</head>
+    <body>
+        <template id="post"><h2>Wizard Warehouse</h2>
+<hr>
+<h3>Link:</h3>
+<p><a class="ls-link" href="#">Github</a></br>
+<a class="ls-link" href="#">Website</a>
+ </p>
+<h3>The Problem:</h3>
+<p>Shopping for magic items in Dungeons &amp; Dragons (D&amp;D) can pose several challenges, from the complexity of rules scattered across various source books to the convoluted, unclear, and inconsistent pricing. The traditional approach often involves players and Dungeon Masters (DMs) navigating through a labyrinth of rules, leading to a time-consuming and sometimes frustrating experience.</p>
+<p> </p>
+<h3>Where wizard warehouse comes in:</h3>
+<p>The platform is designed to address these challenges and the way magical item shopping is handled in D&amp;D. Website aims to not only simplify the intricate and sometimes lengthy process of shopping for magic items but also tackles the convoluted pricing issue present in the source books, with the help of Saidoro's Sane Magical Prices.</p>
+<p>One of the key features is the addition of &quot;Sane&quot; prices. For my table, the cost of items in the source books can be confusing and inconsistent, making the purchase of items a headache. The goal is to streamline this process by providing clear and balanced pricing for each magical artifact, in a searchable format, readialy available. This not only eases the burden of complex calculations for players and DMs but also ensures a fair and consistent economic landscape within your campaign.</p>
+<p>The aim to enhance the D&amp;D experience by offering a user-friendly interface, curated collections of enchanting artifacts, and a pricing system that brings clarity and simplicity to the magical shopping spree.</p>
+<p>Additonaly, I've included a curated lists. Such as a roatating list of a set number of random items that could be used to repersent a inventory of a shop.</p>
+<h3>Next Steps:</h3>
+<p>Look ahead I would like to add:</p>
+<ul>
+<li>Themed Collections: Introduce themed sets of magic items based on various categories, such as elemental themes, school of magic, or campaign settings. This allows DMs and players to easily find items that fit a specific theme or narrative.</li>
+<li>Shop Generator: Develop an AI integration that generates unique shop layouts, aesthetics, and atmospheres. This could include details such as the architecture, lighting, and ambient sounds of the shop.</li>
+<li>Shopkeeper Backstories: Implement an AI-driven system that creates detailed backstories for each shopkeeper. These backstories could include information about the shopkeeper's past, motivations, and any interesting quirks. This adds depth to the characters players encounter during their shopping adventures.</li>
+<li>Quest Hooks: Use the generated backstories to create potential quest hooks. Shopkeepers could offer side quests or provide information that leads players to new adventures, tying the shopping experience to the broader narrative.</li>
+<li>Regional Variation: Introduce regional variations in shop themes and shopkeeper backgrounds. This ensures that the shopping experience feels unique and reflects the diversity of the campaign world.</li>
+</ul>
+</template>
+        <div class="nav" id="nav">
+    
+    <a class="nav-link" href="/">/Home </a>
+</div>
+        <script>
+            const term = $('body').terminal({},{
+            greetings: " "
+        });
+            term.echo(post.innerHTML, { raw: true})
+        </script>
+        
+
+        
+    </body>
+</html>

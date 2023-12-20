@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link href="../../css/main.css" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+    <title>
+        
+            Wizard Warehouse discord bot
+        
+    </title>
+</head>
+    <body>
+        <template id="post"><h2>Wizard Warehouse discord bot</h2>
+<hr>
+<h3>Link:</h3>
+<p><a class="ls-link" href="#">Github</a></br>
+<a class="ls-link" href="#">Website</a>
+ </p>
+</template>
+        <div class="nav" id="nav">
+    
+    <a class="nav-link" href="/">/Home </a>
+</div>
+        <script>
+            const term = $('body').terminal({},{
+            greetings: " "
+        });
+            term.echo(post.innerHTML, { raw: true})
+        </script>
+        
+
+        
+    </body>
+</html>

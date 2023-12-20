@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link href="../../css/main.css" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+    <title>
+        
+            steganographer command-line tool
+        
+    </title>
+</head>
+    <body>
+        <template id="post"><h2>Steganographer command-line tool</h2>
+<hr>
+<h3>Links:</h3>
+<p><a class="ls-link" href="https://github.com/Knealand/blur">Github</a></p>
+<p> </p>
+<h3>Features:</h3>
+<ul>
+<li>Embed files or text within JPG images.</li>
+<li>Simple and user-friendly command-line interface.</li>
+<li>Cross-platform support (Windows, macOS, Linux).</li>
+</ul>
+<p> </p>
+<h3>Functions:</h3>
+<ul>
+<li>check_output_dir(): Placeholder function (TODO).</li>
+<li>identify_file(content): Identifies the file extension based on the provided content using the fleep library.</li>
+<li>embed_jpg(file_path, image_path): Embeds the content of a file into a JPEG image.</li>
+<li>decode_jpg(image_path): Decodes content embedded in a JPEG image and saves it to a file.</li>
+<li>embed_text(image_path, data): Embeds text data into a JPEG image.</li>
+<li>validate_file_path(file_path): Validates and returns an absolute file path.</li>
+<li>validate_image(image_path): Validates and returns an absolute image file path.</li>
+</ul>
+<p> </p>
+<h3>Main Execution:</h3>
+<ul>
+<li>Parses command-line arguments using argparse.</li>
+<li>Supports the following command-line options:
+-f or --file: Input file to embed.
+-i or --image: Image host path.
+-t or --text: Text to embed.
+-d or --decode: Flag to activate decoding mode.</li>
+<li>Checks the mode (encoding or decoding) and executes the corresponding functionality.</li>
+</ul>
+<p> </p>
+<h3>Usage:</h3>
+<ul>
+<li>To encode a file: python script.py -f input_file -i image_file</li>
+<li>To encode text: python script.py -i image_file -t &quot;text to embed&quot;</li>
+<li>To decode: python script.py -i image_file -d</li>
+</ul>
+<p> </p>
+<h3>Notes:</h3>
+<ul>
+<li>The script s assume a specific output directory (/output/).</li>
+<li>There are placeholders for error handling (TODO).</li>
+<li>The code structure is modular, with separate functions for different tasks.</li>
+<li>Some exception handling is in place for file and image operations.</li>
+</ul>
+<p> </p>
+<h3>Next Steps:</h3>
+<p>Enhance error handling in other parts of the code to provide informative error messages and gracefully handle various errors. I also plan to add support for embedding multiple files into an image or extracting multiple embedded files from an image, embedding in addtional image types (.png).</p>
+<p>I would also like to add a progress indicator during file processing to keep users informed, especially for larger files.</p>
+<p>Lastly, adding encryption and compression of embedded content would be fun.</p>
+</template>
+        <div class="nav" id="nav">
+    
+    <a class="nav-link" href="/">/Home </a>
+</div>
+        <script>
+            const term = $('body').terminal({},{
+            greetings: " "
+        });
+            term.echo(post.innerHTML, { raw: true})
+        </script>
+        
+
+        
+    </body>
+</html>
